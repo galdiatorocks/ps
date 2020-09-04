@@ -6,18 +6,42 @@
 	<title>PeerSpot - Meeting Facilitation Platform</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-	<link href="style.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
 </head>
 <body>
     <nav>
 
     </nav>
-    <header class="container-fluid padding">
+    <form class="container-fluid padding">
+    <!-- <section class="container-fluid padding"> -->
         <div class="row">
-            <div class="col-1">
-
-            </div>
-            <div class="col-4">
+            <span class="padding col-5 offset-1">
+                My Availability
+            </span>
+            <fieldset>
+                <label class="switch padding">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>  
+            </fieldset>  
+        </div>
+    <!-- </section>
+    <section class="container-fluid padding"> -->
+        <div class="row">
+            <fieldset class="offset-1">
+                <label class="radio-inline"><input type="radio" name="optradio" value="paid">Paid</label>
+                <label class="radio-inline"><input type="radio" name="optradio" value="free" checked>Free</label>
+            </fieldset>
+        </div>
+        <div class="row">
+            <span class="offset-1 col-2"> Fee: </span>
+            <span id="rupee">INR</span>
+            <input id="fee-input" type="number" class="col-4" step="1.00" min="1.00" value="100.00">
+        </div>
+    <!-- </section>
+    <section class="container-fluid padding"> -->
+        <div class="row">
+            <div class="col-4 offset-1">
                 From
             </div>
             <div class="col-4">
@@ -30,7 +54,8 @@
             <input type="text" class="col-4" placeholder="hh:mm am">
             <img class = "col-2 padding" src="img/trash.png">
         </div>
-    </header>
+    <!-- </section> -->
+    </form>
     <footer>
 
     </footer>
