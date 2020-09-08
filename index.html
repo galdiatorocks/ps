@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PeerSpot - Meeting Facilitation Platform</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 	<link href="main.css" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
     <!-- <section class="container-fluid padding"> -->
         <div class="row">
             <span class="padding col-5 offset-1">
-                My Availability
+                Open to Meet
             </span>
             <fieldset>
                 <label class="switch padding">
@@ -28,6 +28,9 @@
     <!-- </section>
     <section class="container-fluid padding"> -->
         <div class="row">
+            <span>
+                Meeting 
+            </span>
             <fieldset class="offset-1">
                 <label class="radio-inline"><input type="radio" name="optradio" value="paid">Paid</label>
                 <label class="radio-inline"><input type="radio" name="optradio" value="free" checked>Free</label>
@@ -40,24 +43,60 @@
         </div>
     <!-- </section>
     <section class="container-fluid padding"> -->
-        <div class="row">
-            <div class="col-4 offset-1">
-                From
+        <section class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4">
+                    <div id="calendar" class="input-group date input-daterange">
+                        <!-- <input type="text" class="form-control"> -->
+                        <input data-provide="datepicker">
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
-                To
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <input type="text" class="col-4" placeholder="hh:mm am">
-            <input type="text" class="col-4" placeholder="hh:mm am">
-            <img class = "col-2 padding" src="img/trash.png">
-        </div>
+            <section id="pop">
+                <div class="row">
+                    <div id="date-selected col-11">dd-mm-yyyy</div>
+                    <span id="pop-close">X</span>
+                </div>
+                <div class="row">
+                    <span>
+                        Meeting Type
+                    </span>
+                    <fieldset class="offset-1">
+                        <label class="radio-inline"><input type="radio" name="meet-type" value="virtual">Virtual</label>
+                        <label class="radio-inline"><input type="radio" name="meet-type" value="inperson" checked>In-Person</label>
+                    </fieldset>
+                </div>div>
+                <div>Slots</div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <input type="text" class="col-4" placeholder="hh:mm am">
+                    <input type="text" class="col-4" placeholder="hh:mm am">
+                    <img class = "col-2 padding" src="img/minus.png">
+                </div>
+                <div class="row">
+                    <img class = "col-2 padding" src="img/plus.png">
+                    Add Slots                 
+                </div>
+            </section>
+        </section>
     <!-- </section> -->
     </form>
     <footer>
 
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#calendar').datepicker(show, {
+                format: "dd/mm/yyyy",
+                startDate: '1d',
+                autoclose: true
+            })
+        })
+    </script>
 </body>
 </html>
