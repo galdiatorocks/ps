@@ -28,7 +28,7 @@
     <!-- </section>
     <section class="container-fluid padding"> -->
         <div class="row">
-            <span>
+            <span class="padding col-5 offset-1">
                 Meeting 
             </span>
             <fieldset class="offset-1">
@@ -44,37 +44,36 @@
     <!-- </section>
     <section class="container-fluid padding"> -->
         <section class="container">
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center mt-5 offset-1">
                 <div class="col-md-4">
                     <div id="calendar" class="input-group date input-daterange">
                         <!-- <input type="text" class="form-control"> -->
-                        <input data-provide="datepicker">
+                        <input data-provide="datepicker" onchange=onChangeMenu()>
                     </div>
                 </div>
             </div>
-            <section id="pop">
+            <section id="pop" class="pop">
                 <div class="row">
-                    <div id="date-selected col-11">dd-mm-yyyy</div>
+                    <div id="date-selected" class="col-11">dd-mm-yyyy</div>
                     <span id="pop-close">X</span>
                 </div>
                 <div class="row">
-                    <span>
+                    <span class="offset-1">
                         Meeting Type
                     </span>
                     <fieldset class="offset-1">
                         <label class="radio-inline"><input type="radio" name="meet-type" value="virtual">Virtual</label>
                         <label class="radio-inline"><input type="radio" name="meet-type" value="inperson" checked>In-Person</label>
                     </fieldset>
-                </div>div>
-                <div>Slots</div>
+                </div>
+                <div class="offset-1">Slots</div>
                 <div class="row">
-                    <div class="col-1"></div>
-                    <input type="text" class="col-4" placeholder="hh:mm am">
+                    <input type="text" class="col-4 offset-1" placeholder="hh:mm am">
                     <input type="text" class="col-4" placeholder="hh:mm am">
                     <img class = "col-2 padding" src="img/minus.png">
                 </div>
                 <div class="row">
-                    <img class = "col-2 padding" src="img/plus.png">
+                    <img class = "col-2 padding offset-1" src="img/plus.png">
                     Add Slots                 
                 </div>
             </section>
@@ -98,5 +97,7 @@
             })
         })
     </script>
+    <script src="main.js"></script>
+
 </body>
 </html>
