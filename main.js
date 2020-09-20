@@ -26,9 +26,9 @@ $(document).ready(function(){
     })
 
     //Need to configure this for multi dates
-    $('#datepicker').on('changeDate', function() {
+    $('#dates-selected').on('changeDate', function() {
         $('#my_selected_dates').val(
-            $('#datepicker').datepicker('getFormattedDate')
+            $('#dates-selected').datepicker('getFormattedDate')
         );
     });
 })
