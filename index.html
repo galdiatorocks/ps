@@ -12,7 +12,10 @@
     <nav>
 
     </nav>
-    <form class="container-fluid padding">
+
+    <div class="container-fluid padding">
+    <div class="row">
+        <form class="container-fluid padding pt-1">
     <!-- <section class="container-fluid padding"> -->
         <div class="row">
             <span class="padding col-5 offset-1">
@@ -25,61 +28,95 @@
                 </label>  
             </fieldset>  
         </div>
-    <!-- </section>
-    <section class="container-fluid padding"> -->
-        <div class="row">
-            <span class="padding col-5 offset-1">
-                Meeting 
-            </span>
-            <fieldset class="offset-1">
-                <label class="radio-inline"><input type="radio" name="optradio" value="paid">Paid</label>
-                <label class="radio-inline"><input type="radio" name="optradio" value="free" checked>Free</label>
-            </fieldset>
-        </div>
-        <div class="row">
-            <span class="offset-1 col-2"> Fee: </span>
-            <span id="rupee">INR</span>
-            <input id="fee-input" type="number" class="col-4" step="1.00" min="1.00" value="100.00">
-        </div>
-    <!-- </section>
-    <section class="container-fluid padding"> -->
         <section class="container">
             <div class="row justify-content-center mt-5 offset-1">
                 <div class="col-md-4">
-                    <div id="calendar" class="input-group date input-daterange">
-                        <!-- <input type="text" class="form-control"> -->
-                        <input data-provide="datepicker" onchange=onChangeMenu()>
+                    <div id="datepicker">
+                        <input type="hidden" id="my_hidden_input" onchange=onChangeMenu()>
                     </div>
                 </div>
             </div>
             <section id="pop" class="pop">
-                <div class="row">
-                    <div id="date-selected" class="col-11">dd-mm-yyyy</div>
-                    <span id="pop-close">X</span>
-                </div>
-                <div class="row">
-                    <span class="offset-1">
-                        Meeting Type
-                    </span>
-                    <fieldset class="offset-1">
-                        <label class="radio-inline"><input type="radio" name="meet-type" value="virtual">Virtual</label>
-                        <label class="radio-inline"><input type="radio" name="meet-type" value="inperson" checked>In-Person</label>
-                    </fieldset>
-                </div>
-                <div class="offset-1">Slots</div>
-                <div class="row">
-                    <input type="text" class="col-4 offset-1" placeholder="hh:mm am">
-                    <input type="text" class="col-4" placeholder="hh:mm am">
-                    <img class = "col-2 padding" src="img/minus.png">
-                </div>
-                <div class="row">
-                    <img class = "col-2 padding offset-1" src="img/plus.png">
-                    Add Slots                 
+                <div id="subform">
+                    <div class="row">
+                        <div id="date-selected" class="col-11">dd-mm-yyyy</div>
+                        <span id="pop-close" onclick=onChangeMenu()>X</span>
+                    </div>
+                    <div class="row">
+                        <span class="padding col-5 offset-1">
+                            Meeting 
+                        </span>
+                        <fieldset class="offset-1">
+                            <label class="radio-inline"><input type="radio" name="optradio" value="paid">Paid</label>
+                            <label class="radio-inline"><input type="radio" name="optradio" value="free" checked>Free</label>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <span class="offset-1 col-2"> Fee: </span>
+                        <span id="rupee">INR</span>
+                        <input id="fee-input" type="number" class="col-4" step="1.00" min="1.00" value="100.00">
+                    </div>
+                    <div class="row">
+                        <span class="padding offset-1">
+                            Meeting Type
+                        </span>
+                        <fieldset class="offset-1">
+                            <label class="radio-inline"><input type="radio" name="meet-type" value="virtual">Virtual</label>
+                            <label class="radio-inline"><input type="radio" name="meet-type" value="inperson" checked>In-Person</label>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <span class="offset-1">Meeting notes:</span>
+                        <textarea class="offset-1 col-10" rows="3"></textarea>
+                    </div>
+                    <div class="offset-1">Slots</div>
+                    <div class="row">
+                        <input type="text" class="col-4 offset-1" placeholder="hh:mm am">
+                        <input type="text" class="col-4" placeholder="hh:mm am">
+                        <img class = "col-2 padding" src="img/minus.png">
+                    </div>
+                    <div class="row">
+                        <img class = "col-2 padding offset-1" src="img/plus.png">
+                        Add Slots                 
+                    </div>
+                    <div class="row">
+                        <fieldset class="offset-1">
+                            <label class="radio offset-3"><input type="radio" name="days-dates-radio" value="particular-days" checked>Particular Days</label>
+                            <br>
+                            <label class="radio offset-3"><input type="radio" name="days-dates-radio" value="particular-dates">Particular Dates</label>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <div id="days-div" class="offset-1">
+                            <div>Repeat On</div>
+                            <div class="row">
+                                <span class="selected-days">S</span>
+                                <span class="selected-days">M</span>
+                                <span class="selected-days">T</span>
+                                <span class="selected-days">W</span>
+                                <span class="selected-days">T</span>
+                                <span class="selected-days">F</span>
+                                <span class="selected-days">St</span>
+                            </div>
+                            <label>Ends On</label>
+                            <label class="radio offset-3"><input type="radio" name="ends-on" value="" checked>Till Date <input type="text"></label>
+                            <br>
+                            <label class="radio offset-3"><input type="radio" name="end-on" value="">Till No. of <input type="text"> Weeks</label>
+                        </div>
+                        <div id="dates-div" class="offset-1">
+                            <div>Choose dates</div>
+                            <div id="dates-selected">
+                                <input type="hidden" id="my_selected_dates">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
     <!-- </section> -->
     </form>
+    </div>
+    </div>
     <footer>
 
     </footer>
@@ -88,15 +125,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#calendar').datepicker(show, {
-                format: "dd/mm/yyyy",
-                startDate: '1d',
-                autoclose: true
-            })
-        })
-    </script>
     <script src="main.js"></script>
 
 </body>
